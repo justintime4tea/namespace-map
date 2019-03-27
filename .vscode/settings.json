@@ -1,0 +1,13 @@
+{
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "mochaExplorer.optsFile": "test/mocha.opts",
+  "mochaExplorer.env": {
+    "NYC_ROOT_ID": ""
+  },
+  "javascript.validate.enable": false
+}

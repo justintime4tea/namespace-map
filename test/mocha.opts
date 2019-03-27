@@ -1,0 +1,5 @@
+test/module
+--require test/common
+--require babel-core/register
+--ui bdd
+--recursive
