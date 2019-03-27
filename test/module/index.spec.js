@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-expressions */
-const NamespaceMap = require('../../index');
+import NamespaceMap from '../../index';
 
 describe('NamespaceMapMap', () => {
   it('should have a constructor', () => {
@@ -21,14 +21,13 @@ describe('NamespaceMapMap', () => {
 
   describe('#add', () => {
     it('should create a nested map structure', () => {
-      const expectedMap = new Map()
-        .set('com', new Map()
-          .set('justin', new Map()
-            .set('tools', new Map()
-              .set('#', 'SHOVEL')
-            )
-          )
-        );
+      const expectedMap = new Map().set(
+        'com',
+        new Map().set(
+          'justin',
+          new Map().set('tools', new Map().set('#', 'SHOVEL'))
+        )
+      );
       const namespaceMap = new NamespaceMap();
       namespaceMap.add('SHOVEL', 'com.justin.tools');
       namespaceMap.namespace.should.deep.equal(expectedMap);
@@ -36,16 +35,16 @@ describe('NamespaceMapMap', () => {
   });
 
   describe('#get', () => {
-    const seedMap = new Map()
-      .set('com', new Map()
-        .set('justin', new Map()
-          .set('tools', new Map()
-            .set('shovel', new Map()
-              .set('#', 'SHOVEL_INTERFACE')
-            )
-          )
+    const seedMap = new Map().set(
+      'com',
+      new Map().set(
+        'justin',
+        new Map().set(
+          'tools',
+          new Map().set('shovel', new Map().set('#', 'SHOVEL_INTERFACE'))
         )
-      );
+      )
+    );
 
     it('should return all elements at the given namespace', () => {
       const namespaceMap = new NamespaceMap();
@@ -59,14 +58,13 @@ describe('NamespaceMapMap', () => {
     // eslint-disable-next-line max-len
     it('should delete the value at the end of the namespace and cleanup empties', () => {
       const namespaceMap = new NamespaceMap();
-      namespaceMap.namespace = new Map()
-        .set('com', new Map()
-          .set('justin', new Map()
-            .set('tools', new Map()
-              .set('#', 'SHOVEL')
-            )
-          )
-        );
+      namespaceMap.namespace = new Map().set(
+        'com',
+        new Map().set(
+          'justin',
+          new Map().set('tools', new Map().set('#', 'SHOVEL'))
+        )
+      );
 
       namespaceMap.delete('com.justin.tools');
       namespaceMap.namespace.should.deep.equal(new Map());

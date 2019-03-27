@@ -10,13 +10,7 @@
     "es6": true,
     "worker": true
   },
-  "plugins": [
-    "standard",
-    "import",
-    "promise",
-    "node",
-    "security"
-  ],
+  "plugins": ["standard", "import", "promise", "node", "security"],
   "extends": [
     "standard",
     "google",
@@ -36,28 +30,15 @@
     "node/no-unsupported-features": [
       0,
       {
-        "version": 8,
-        "ignores": []
+        "version": 10.0,
+        "ignores": ["modules"]
       }
     ],
-    "standard/object-curly-even-spacing": [
-      2,
-      "either"
-    ],
-    "standard/array-bracket-even-spacing": [
-      2,
-      "either"
-    ],
-    "standard/computed-property-even-spacing": [
-      2,
-      "even"
-    ],
-    "standard/no-callback-literal": [
-      2, [
-        "cb",
-        "callback"
-      ]
-    ],
+    "node/no-unsupported-features/es-syntax": 0,
+    "standard/object-curly-even-spacing": [2, "either"],
+    "standard/array-bracket-even-spacing": [2, "either"],
+    "standard/computed-property-even-spacing": [2, "even"],
+    "standard/no-callback-literal": [2, ["cb", "callback"]],
     "linebreak-style": [0],
     "eqeqeq": 2,
     "comma-dangle": 0,
@@ -69,11 +50,7 @@
     "no-undef": 0,
     "no-unused-vars": 1,
     "no-var": 1,
-    "quotes": [
-      2,
-      "single",
-      "avoid-escape"
-    ],
+    "quotes": [2, "single", "avoid-escape"],
     "arrow-parens": 0,
     "semi": [1, "always"],
     "semi-spacing": 1,
@@ -91,7 +68,9 @@
       }
     ],
     "indent": [
-      "error", 2, {
+      "error",
+      2,
+      {
         "FunctionDeclaration": {"parameters": "first"},
         "SwitchCase": 1
       }

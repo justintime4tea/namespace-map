@@ -1,15 +1,14 @@
 {
-  "presets": [
-    "es2015"
-  ],
   "plugins": [
-    "transform-class-properties",
-    "transform-object-rest-spread",
+    "@babel/plugin-proposal-object-rest-spread",
+    "@babel/plugin-transform-modules-commonjs",
+    "@babel/plugin-proposal-export-default-from",
+    "@babel/plugin-proposal-private-methods",
+    "@babel/plugin-proposal-export-namespace-from",
     [
-      "transform-es2015-classes",
-      {
-        "loose": true
-      }
-    ]
+      "@babel/plugin-proposal-decorators",
+      {"decoratorsBeforeExport": true, "legacy": false}
+    ],
+    ["@babel/plugin-proposal-class-properties", {"loose": false}]
   ]
 }

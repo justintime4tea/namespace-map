@@ -165,4 +165,4 @@ class NamespaceMap {
   }
 }
 
-module.exports = NamespaceMap;
+export default NamespaceMap;
